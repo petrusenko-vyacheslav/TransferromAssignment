@@ -1,0 +1,6 @@
+@TransferRoomAssignment.Server_HostAddress = http://localhost:5063
+
+GET {{TransferRoomAssignment.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
