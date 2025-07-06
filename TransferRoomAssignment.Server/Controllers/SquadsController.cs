@@ -25,7 +25,7 @@ namespace TransferRoomAssignment.Server.Controllers
             catch (Exception ex)
             {
 
-                return BadRequest(ex.Message);
+                return BadRequest(new BadRequestResponse { Error = ex.Message });
             }
         }
     }

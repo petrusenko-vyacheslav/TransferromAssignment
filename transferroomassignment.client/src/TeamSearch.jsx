@@ -9,14 +9,13 @@ function TeamSearch({setTeam, setPlayers}) {
 
     const getSquad = async () => {
         const response = await fetch(`api/squads/get?team=${teamToLookFor}`);
+        const data = await response.json();
         if (response.ok) {
-            const data = await response.json();
             setTeam(data.team);
             setPlayers(data.players)
             setError('');
         } else {
-            const error = await response.text();
-            setError(error);
+            setError(data.error);
         }
     }
     const renderError = error ? <div className="alert alert-danger" role="alert">
