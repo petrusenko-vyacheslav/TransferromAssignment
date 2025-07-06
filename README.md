@@ -6,6 +6,7 @@ To run project:
 3. dotnet run --launch-profile "https" --ApiSports:Key=%your api key%
 4. cd .\transferroomassignment.client\
 5. npm run dev
+6. in your browser open https://localhost:62352/
 
 To get API key:
 1. Sign up at https://dashboard.api-football.com/login
