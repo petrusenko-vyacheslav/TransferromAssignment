@@ -25,6 +25,11 @@ namespace TransferRoomAssignment.Server.Services
             }
 
             var getSquadhttpResponse = await _httpClient.GetAsync($"players/squads?team={team.Id}");
+            if (!getSquadhttpResponse.IsSuccessStatusCode)
+            {
+                throw new Exception("Api call was unsuccessfull");
+            }
+
             var getSquadhttpResponseString = await getSquadhttpResponse.Content.ReadAsStringAsync();
             var apiSportsSquad = JsonSerializer.Deserialize<ApiSportsSquadDto>(getSquadhttpResponseString);
 
