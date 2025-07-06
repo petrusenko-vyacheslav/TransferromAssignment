@@ -5,7 +5,7 @@ To get API key:
 2. Go to https://dashboard.api-football.com/profile?access and get your key
 
 To run project:
-1. Ensure you have latest node.js version installed
+1. ensure you have latest node.js version installed
 2. clone repository
 3. cd: %your project location%\TransferRoomAssignment.Server\
 4. dotnet run --launch-profile "https" --ApiSports:Key=%your api key%
