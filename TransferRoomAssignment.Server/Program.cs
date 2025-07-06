@@ -10,6 +10,7 @@ namespace TransferRoomAssignment.Server
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddControllers();
             builder.Services.AddHttpClient<ISquadService, SquadService>(
                 client =>
                 {
@@ -17,7 +18,6 @@ namespace TransferRoomAssignment.Server
                     client.DefaultRequestHeaders.Add(builder.Configuration.GetValue<string>("ApiSports:KeyHeaderName"), builder.Configuration.GetValue<string>("ApiSports:Key"));
                 });
             builder.Services.AddTransient<ITeamRepository, TeamRepository>();
-
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -34,7 +34,6 @@ namespace TransferRoomAssignment.Server
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
 
 
